@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { DetailsPage } from '../details/details';
 
 export interface resultat {
   title: string;
@@ -20,9 +21,11 @@ const fauxresultats: resultat[] = [
   templateUrl: 'home.html'
 })
 export class HomePage {
+  PushPage : any;
   result: resultat[];
   constructor(public navCtrl: NavController) {
     this.result = [];
+    this.PushPage = DetailsPage;
   }
   onInput(event: any): void {
     const query: string = event.target.value;
